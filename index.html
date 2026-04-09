@@ -140,11 +140,15 @@ section { padding: 6rem 2rem; }
 .portfolio-item {
   position: relative; aspect-ratio: 4/3; overflow: hidden;
   background: var(--gray-800); cursor: pointer;
+  display: block; text-decoration: none; color: var(--white);
 }
 .portfolio-item .p-bg {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, var(--gray-800), #1a1a1a);
   transition: transform 0.6s ease;
+}
+.portfolio-item .p-bg img {
+  width: 100%; height: 100%; object-fit: cover;
 }
 .portfolio-item:hover .p-bg { transform: scale(1.05); }
 /* animated grid lines */
@@ -320,30 +324,30 @@ footer a:hover { color: var(--white); }
     <p class="section-label">Our Portfolio</p>
     <h2 class="section-title">Recent Projects</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <div class="p-bg"></div>
+      <a href="https://www.369storage.com" target="_blank" rel="noopener" class="portfolio-item">
+        <div class="p-bg"><img src="images/369storage-web-marketing.png" alt="Affordable website development and web marketing for 369 Storage – custom small business website design by Red Dirt Web Solutions"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="p-icon">01</div>
-        <div class="p-content"><h3>Mountain View Landscaping</h3><span>Web Design &bull; SEO</span></div>
-      </div>
-      <div class="portfolio-item">
-        <div class="p-bg"></div>
+        <div class="p-content"><h3>369Storage.com</h3><span>Web Design &bull; SEO</span></div>
+      </a>
+      <a href="https://www.3panewindows.com" target="_blank" rel="noopener" class="portfolio-item">
+        <div class="p-bg"><img src="images/3panewindows-website-development.png" alt="Professional website development for 3Pane Windows – affordable small business web design and SEO services"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="p-icon">02</div>
-        <div class="p-content"><h3>North Georgia Plumbing Co.</h3><span>Website &bull; Google Ads</span></div>
-      </div>
-      <div class="portfolio-item">
-        <div class="p-bg"></div>
+        <div class="p-content"><h3>3Pane Windows</h3><span>Website &bull; Google Ads</span></div>
+      </a>
+      <a href="https://drakeusllc.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
+        <div class="p-bg"><img src="images/drake-grading-website-builder.png" alt="Custom website builder project for Drake US LLC – affordable website development and local business SEO by Red Dirt Web Solutions"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
         <div class="p-icon">03</div>
-        <div class="p-content"><h3>Dahlonega Family Dental</h3><span>Web Design &bull; Social Media</span></div>
-      </div>
+        <div class="p-content"><h3>Drake US LLC</h3><span>Web Design &bull; Social Media</span></div>
+      </a>
       <div class="portfolio-item">
         <div class="p-bg"></div>
         <div class="grid-lines"></div>
@@ -401,7 +405,7 @@ footer a:hover { color: var(--white); }
         </div>
         <div class="contact-detail">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          hello@reddirtwebsolutions.com
+          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a121f1616153a081f1e1e13080e0d1f180915160f0e1315140954191517">[email&#160;protected]</a>
         </div>
       </div>
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -435,7 +439,7 @@ footer a:hover { color: var(--white); }
   <p>&copy; 2026 Red Dirt Web Solutions. All rights reserved.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav shadow on scroll
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
@@ -447,10 +451,4 @@ document.querySelectorAll('nav a').forEach(a => {
 });
 
 // Reveal on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+const observer = new Interse
