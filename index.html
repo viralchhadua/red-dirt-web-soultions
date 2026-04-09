@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Dirt Web Solutions | Web Design & SEO for North Georgia Small Businesses</title>
+<meta name="description" content="Red Dirt Web Solutions builds SEO-optimized websites for small businesses in North Georgia. AI-powered digital marketing, web design, and social media management in Gainesville, Dahlonega, Cleveland, and surrounding areas.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-400: #a3a3a3;
+  --gray-600: #525252;
+  --gray-800: #262626;
+  --red: #c0392b;
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Instrument Serif', serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+nav .nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem; color: var(--black); text-decoration: none;
+}
+.logo span { color: var(--red); }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a { text-decoration: none; color: var(--gray-600); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--black); }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: var(--black); margin: 5px 0; transition: 0.3s; }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 8rem 2rem 4rem;
+  background: var(--black); color: var(--white);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(192,57,43,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(192,57,43,0.08) 0%, transparent 50%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.1; margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards;
+}
+.hero h1 em { color: var(--red); font-style: italic; }
+.hero p {
+  font-size: 1.15rem; color: var(--gray-400); max-width: 560px; margin: 0 auto 2.5rem;
+  opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.btn {
+  display: inline-block; padding: 0.9rem 2.2rem;
+  background: var(--red); color: var(--white);
+  text-decoration: none; font-weight: 600; font-size: 0.875rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  border: none; cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
+}
+.btn:hover { background: #a93226; transform: translateY(-1px); }
+
+/* SECTIONS */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--red); font-weight: 700; margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15; margin-bottom: 1rem;
+}
+
+/* SERVICES */
+.services { background: var(--white); }
+.services-intro { max-width: 700px; color: var(--gray-600); font-size: 1.05rem; margin-bottom: 3.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card {
+  padding: 2.5rem 2rem; border: 1px solid var(--gray-200);
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative; overflow: hidden;
+}
+.service-card::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+  background: var(--red); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.service-card:hover { border-color: var(--gray-400); transform: translateY(-4px); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-icon {
+  width: 48px; height: 48px; margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--gray-200); color: var(--red);
+}
+.service-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; font-weight: 600; }
+.service-card p { color: var(--gray-600); font-size: 0.95rem; }
+
+/* PORTFOLIO */
+.portfolio { background: var(--black); color: var(--white); }
+.portfolio .section-label { color: var(--red); }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem; margin-top: 3rem;
+}
+.portfolio-item {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+  background: var(--gray-800); cursor: pointer;
+}
+.portfolio-item .p-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--gray-800), #1a1a1a);
+  transition: transform 0.6s ease;
+}
+.portfolio-item:hover .p-bg { transform: scale(1.05); }
+/* animated grid lines */
+.portfolio-item .grid-lines {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(192,57,43,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192,57,43,0.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0; transition: opacity 0.5s;
+}
+.portfolio-item:hover .grid-lines { opacity: 1; }
+/* scan line */
+.portfolio-item .scan-line {
+  position: absolute; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  top: -2px; opacity: 0;
+  transition: opacity 0.3s;
+}
+.portfolio-item:hover .scan-line {
+  opacity: 0.6;
+  animation: scanDown 2s linear infinite;
+}
+.portfolio-item .p-content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.portfolio-item:hover .p-content { opacity: 1; transform: translateY(0); }
+.p-content h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+.p-content span { font-size: 0.8rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; }
+/* placeholder icon */
+.portfolio-item .p-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-size: 2rem; color: var(--gray-600); opacity: 0.4;
+  font-family: var(--font-display);
+  transition: opacity 0.4s;
+}
+.portfolio-item:hover .p-icon { opacity: 0; }
+/* corner accents */
+.portfolio-item .corner {
+  position: absolute; width: 16px; height: 16px;
+  border-color: var(--red); border-style: solid;
+  opacity: 0; transition: opacity 0.4s;
+}
+.portfolio-item:hover .corner { opacity: 0.5; }
+.corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* ABOUT */
+.about { background: var(--gray-100); }
+.about-content { max-width: 740px; }
+.about-content p { color: var(--gray-600); font-size: 1.05rem; margin-bottom: 1.25rem; }
+
+/* CONTACT */
+.contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-info h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 1rem; }
+.contact-info p { color: var(--gray-600); margin-bottom: 2rem; }
+.contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--gray-600); font-size: 0.95rem; }
+.contact-detail svg { width: 18px; height: 18px; color: var(--red); flex-shrink: 0; }
+.contact-form label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.4rem; color: var(--gray-800); }
+.contact-form input, .contact-form textarea, .contact-form select {
+  width: 100%; padding: 0.85rem 1rem;
+  border: 1px solid var(--gray-200); background: var(--gray-100);
+  font-family: var(--font-body); font-size: 0.95rem;
+  transition: border-color 0.3s; outline: none; margin-bottom: 1.25rem;
+}
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--red); }
+.contact-form textarea { resize: vertical; min-height: 120px; }
+.contact-form .btn { width: 100%; text-align: center; opacity: 1; animation: none; }
+
+/* FOOTER */
+footer {
+  background: var(--black); color: var(--gray-400); padding: 3rem 2rem;
+  text-align: center; font-size: 0.85rem;
+}
+footer a { color: var(--gray-400); text-decoration: none; }
+footer a:hover { color: var(--white); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scanDown {
+  from { top: -2px; }
+  to { top: 100%; }
+}
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid var(--gray-200); }
+  nav ul.open { display: flex; }
+  .menu-toggle { display: block; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  section { padding: 4rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo"><span>Red Dirt</span> Web Solutions</a>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Your North Georgia Business, <em>Found Online</em></h1>
+    <p>We build search-engine-optimized websites and AI-powered marketing strategies that bring local customers directly to your door.</p>
+    <a href="#contact" class="btn">Get a Free Consultation</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner reveal">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Simple Websites That<br>Drive Real Results</h2>
+    <p class="services-intro">We specialize in building strong, simple websites designed to help small businesses across North Georgia attract the customers already searching for their services. Through AI-driven search engine optimization and targeted digital marketing, we maximize your online visibility&mdash;so when customers in Gainesville, Dahlonega, Cleveland, or anywhere in the North Georgia mountains search for what you offer, they find you first.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M7 21h10M12 17v4"/></svg>
+        </div>
+        <h3>Custom Website Design &amp; Development</h3>
+        <p>Clean, fast-loading, mobile-responsive websites built from the ground up for your small business. Every page is structured to rank well on Google and convert visitors into paying customers.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>AI-Powered SEO &amp; Search Visibility</h3>
+        <p>We leverage artificial intelligence to research keywords, optimize your content, and ensure your business appears at the top of local search results when customers are ready to hire or buy.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 2H7a2 2 0 0 0-2 2v16l7-3 7 3V4a2 2 0 0 0-2-2z"/></svg>
+        </div>
+        <h3>Monthly Maintenance &amp; Social Media Marketing</h3>
+        <p>Ongoing website updates, security monitoring, and strategic social media management to keep your online presence active, engaging, and consistently driving new leads to your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-inner reveal">
+    <p class="section-label">Our Portfolio</p>
+    <h2 class="section-title">Recent Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">01</div>
+        <div class="p-content"><h3>Mountain View Landscaping</h3><span>Web Design &bull; SEO</span></div>
+      </div>
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">02</div>
+        <div class="p-content"><h3>North Georgia Plumbing Co.</h3><span>Website &bull; Google Ads</span></div>
+      </div>
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">03</div>
+        <div class="p-content"><h3>Dahlonega Family Dental</h3><span>Web Design &bull; Social Media</span></div>
+      </div>
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">04</div>
+        <div class="p-content"><h3>Hall County Auto Repair</h3><span>Website &bull; Local SEO</span></div>
+      </div>
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">05</div>
+        <div class="p-content"><h3>Blue Ridge Bakery &amp; Café</h3><span>Branding &bull; Web Design</span></div>
+      </div>
+      <div class="portfolio-item">
+        <div class="p-bg"></div>
+        <div class="grid-lines"></div>
+        <div class="scan-line"></div>
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="p-icon">06</div>
+        <div class="p-content"><h3>Gainesville HVAC Pros</h3><span>Website &bull; Marketing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner reveal">
+    <p class="section-label">About Us</p>
+    <h2 class="section-title">Rooted in North Georgia,<br>Built for Your Growth</h2>
+    <div class="about-content">
+      <p>Red Dirt Web Solutions is a North Georgia web design and digital marketing agency dedicated to helping small, locally owned businesses establish a powerful online presence. Based in the foothills of the Blue Ridge Mountains, we understand the unique challenges that local service providers, retailers, and contractors face when competing for visibility in an increasingly digital marketplace.</p>
+      <p>Our team combines years of experience in website development, search engine optimization, and AI-driven marketing to deliver solutions that are tailored specifically to businesses in Gainesville, Dahlonega, Cleveland, Cumming, and communities throughout Hall County, Lumpkin County, and the greater North Georgia region. We believe that every plumber, electrician, restaurant owner, dentist, and small business operator deserves a professional website that works as hard as they do.</p>
+      <p>We are not a faceless agency operating from a distant city. We are your neighbors. We shop at the same stores, eat at the same restaurants, and care about the same communities you serve. That local perspective shapes everything we build&mdash;from the keywords we target to the messaging we craft. When a homeowner in Hall County searches for a roofer, or a family in Lumpkin County looks for a pediatric dentist, our goal is to make sure they find <em>your</em> business.</p>
+      <p>Whether you need a brand-new website, a redesign of an outdated site, ongoing SEO services, or monthly social media management, Red Dirt Web Solutions is here to be your long-term digital partner. We keep things simple, transparent, and affordable&mdash;because growing your business online should not be complicated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner reveal">
+    <p class="section-label">Contact Us</p>
+    <h2 class="section-title">Let's Get Started</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Ready to bring your business online?</h3>
+        <p>Fill out the form and we will reach out within one business day to schedule your free consultation. No pressure, no jargon&mdash;just a straightforward conversation about how we can help your business grow.</p>
+        <div class="contact-detail">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          North Georgia
+        </div>
+        <div class="contact-detail">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hello@reddirtwebsolutions.com
+        </div>
+      </div>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(706) 555-1234">
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service">
+          <option value="">Select a service...</option>
+          <option value="website-design">Website Design & Development</option>
+          <option value="seo">SEO & Search Visibility</option>
+          <option value="social-media">Social Media Marketing</option>
+          <option value="maintenance">Monthly Maintenance</option>
+          <option value="all">All of the Above</option>
+        </select>
+        <label for="message">Tell Us About Your Business</label>
+        <textarea id="message" name="message" placeholder="What does your business do, and what are you hoping to achieve online?"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Red Dirt Web Solutions. All rights reserved.</p>
+</footer>
+
+<script>
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
