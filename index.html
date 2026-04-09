@@ -405,7 +405,7 @@ footer a:hover { color: var(--white); }
         </div>
         <div class="contact-detail">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a121f1616153a081f1e1e13080e0d1f180915160f0e1315140954191517">[email&#160;protected]</a>
+          hello@reddirtwebsolutions.com
         </div>
       </div>
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -439,7 +439,7 @@ footer a:hover { color: var(--white); }
   <p>&copy; 2026 Red Dirt Web Solutions. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Nav shadow on scroll
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
@@ -451,4 +451,10 @@ document.querySelectorAll('nav a').forEach(a => {
 });
 
 // Reveal on scroll
-const observer = new Interse
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
