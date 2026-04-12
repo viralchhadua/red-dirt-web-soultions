@@ -5,7 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Red Dirt Web Solutions | Web Design & SEO for North Georgia Small Businesses</title>
 <meta name="description" content="Red Dirt Web Solutions builds SEO-optimized websites for small businesses in North Georgia. AI-powered digital marketing, web design, and social media management in Gainesville, Dahlonega, Cleveland, and surrounding areas.">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://reddirtwebsites.com/" />
+<meta property="og:title" content="Red Dirt Web Solutions | Web Design & SEO for North Georgia">
+<meta property="og:description" content="Affordable website design, SEO, and social media management for small businesses in North Georgia. Serving Gainesville, Dahlonega, Cleveland, Dawsonville, and surrounding communities.">
+<meta property="og:image" content="https://reddirtwebsites.com/images/og-share-image.png">
+<meta property="og:url" content="https://reddirtwebsites.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Red Dirt Web Solutions">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Red Dirt Web Solutions | Web Design & SEO for North Georgia">
+<meta name="twitter:description" content="Affordable website design, SEO, and social media management for small businesses in North Georgia.">
+<meta name="twitter:image" content="https://reddirtwebsites.com/images/og-share-image.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Damion&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -131,10 +145,19 @@ nav .nav-inner {
   padding: 1rem 2rem;
 }
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem; color: var(--black); text-decoration: none;
+  text-decoration: none; display: flex; align-items: baseline; gap: 10px; text-transform: none;
 }
-.logo span { color: var(--red); }
+.logo .logo-red {
+  font-family: 'Damion', cursive;
+  font-size: 1.9rem;
+  color: #B04734;
+}
+.logo .logo-black {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #000000;
+}
 nav ul { list-style: none; display: flex; gap: 2rem; }
 nav a { text-decoration: none; color: var(--gray-600); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.2s; }
 nav a:hover { color: var(--black); }
@@ -348,7 +371,7 @@ footer a:hover { color: var(--white); }
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo"><span>Red Dirt</span> Web Solutions</a>
+    <a href="#" class="logo"><span class="logo-red">Red Dirt</span><span class="logo-black">Web Solutions</span></a>
     <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -409,7 +432,7 @@ footer a:hover { color: var(--white); }
     <h2 class="section-title">Recent Projects</h2>
     <div class="portfolio-grid">
       <a href="https://hiralshenna.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/henna-marketing-website.png" alt="Henna artist website design and digital marketing in North Georgia – affordable small business web development and SEO management by Red Dirt Web Solutions"></div>
+        <div class="p-bg"><img loading="lazy" src="images/henna-marketing-website.png" alt="Henna artist website design and digital marketing in North Georgia – affordable small business web development and SEO management by Red Dirt Web Solutions"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -417,7 +440,7 @@ footer a:hover { color: var(--white); }
         <div class="p-content"><h3>Hiral's Henna</h3><span>Web Design &bull; Marketing</span></div>
       </a>
       <a href="https://www.369storage.com" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/self-storage-website.png" alt="Self storage website builder and local SEO services near Gainesville Georgia – small business website development and social media management"></div>
+        <div class="p-bg"><img loading="lazy" src="images/self-storage-website.png" alt="Self storage website builder and local SEO services near Gainesville Georgia – small business website development and social media management"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -425,7 +448,7 @@ footer a:hover { color: var(--white); }
         <div class="p-content"><h3>369 Storage</h3><span>Web Design &bull; SEO</span></div>
       </a>
       <a href="https://smokingunbbq.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/smokin-gun-bbq-tacos-food-truck-website.png" alt="Food truck website design and social media management in North Georgia – affordable website builder and online marketing for small restaurants and mobile food businesses"></div>
+        <div class="p-bg"><img loading="lazy" src="images/smokin-gun-bbq-tacos-food-truck-website.png" alt="Food truck website design and social media management in North Georgia – affordable website builder and online marketing for small restaurants and mobile food businesses"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -433,7 +456,7 @@ footer a:hover { color: var(--white); }
         <div class="p-content"><h3>Smokin' Gun BBQ &amp; Tacos</h3><span>Web Design &bull; Social Media</span></div>
       </a>
       <a href="https://3panewindows.com" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/windows-marketing-website.png" alt="Window company website development and search engine optimization in Dawsonville Georgia – affordable web design and digital marketing for home service contractors"></div>
+        <div class="p-bg"><img loading="lazy" src="images/windows-marketing-website.png" alt="Window company website development and search engine optimization in Dawsonville Georgia – affordable web design and digital marketing for home service contractors"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -441,7 +464,7 @@ footer a:hover { color: var(--white); }
         <div class="p-content"><h3>3Pane Windows</h3><span>Website &bull; Google Ads</span></div>
       </a>
       <a href="https://drakeusllc.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/grading-construction-website.png" alt="Construction and grading company website design near Dahlonega Georgia – SEO optimized small business web development and lead generation by Red Dirt Web Solutions"></div>
+        <div class="p-bg"><img loading="lazy" src="images/grading-construction-website.png" alt="Construction and grading company website design near Dahlonega Georgia – SEO optimized small business web development and lead generation by Red Dirt Web Solutions"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
@@ -449,7 +472,7 @@ footer a:hover { color: var(--white); }
         <div class="p-content"><h3>Drake Construction &amp; Trucking</h3><span>Web Design &bull; Social Media</span></div>
       </a>
       <a href="https://razoheatingandair.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
-        <div class="p-bg"><img src="images/heating-air-conditioning-website.png" alt="HVAC heating and air conditioning website design and local SEO in North Georgia – affordable website building and online marketing for service businesses near Cumming and Cleveland"></div>
+        <div class="p-bg"><img loading="lazy" src="images/heating-air-conditioning-website.png" alt="HVAC heating and air conditioning website design and local SEO in North Georgia – affordable website building and online marketing for service businesses near Cumming and Cleveland"></div>
         <div class="grid-lines"></div>
         <div class="scan-line"></div>
         <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
