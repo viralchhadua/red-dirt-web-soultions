@@ -322,6 +322,7 @@ section { padding: 6rem 2rem; }
 .contact-info p { color: var(--gray-600); margin-bottom: 2rem; }
 .contact-detail { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: var(--gray-600); font-size: 0.95rem; }
 .contact-detail svg { width: 18px; height: 18px; color: var(--red); flex-shrink: 0; }
+.contact-detail a { color: inherit; text-decoration: none; }
 .contact-form label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.4rem; color: var(--gray-800); }
 .contact-form input, .contact-form textarea, .contact-form select {
   width: 100%; padding: 0.85rem 1rem;
@@ -490,7 +491,7 @@ footer a:hover { color: var(--white); }
     <h2 class="section-title">Rooted in North Georgia,<br>Built for Your Growth</h2>
     <div class="about-content">
       <p>Red Dirt Web Solutions is a North Georgia web design and digital marketing agency dedicated to helping small, locally owned businesses establish a powerful online presence. Based in the foothills of the Blue Ridge Mountains, we understand the unique challenges that local service providers, retailers, and contractors face when competing for visibility in an increasingly digital marketplace.</p>
-      <p>Our team combines years of experience in website development, search engine optimization, and AI-driven marketing to deliver solutions that are tailored specifically to businesses in Gainesville, Dahlonega, Cleveland, Cumming, and communities throughout Hall County, Lumpkin County, and the greater North Georgia region. We believe that every plumber, electrician, restaurant owner, dentist, and small business operator deserves a professional website that works as hard as they do.</p>
+      <p>Our team combines years of experience in website development, search engine optimization, and AI-driven marketing to deliver solutions that are tailored specifically to businesses in Gainesville, Dahlonega, Cleveland, Cumming, and communities throughout Hall County, Lumpkin County, Forsyth County, Dawson County, and the greater North Georgia region. We believe that every plumber, electrician, restaurant owner, dentist, and small business operator deserves a professional website that works as hard as they do.</p>
       <p>We are not a faceless agency operating from a distant city. We are your neighbors. We shop at the same stores, eat at the same restaurants, and care about the same communities you serve. That local perspective shapes everything we build&mdash;from the keywords we target to the messaging we craft. When a homeowner in Hall County searches for a roofer, or a family in Lumpkin County looks for a pediatric dentist, our goal is to make sure they find <em>your</em> business.</p>
       <p>Whether you need a brand-new website, a redesign of an outdated site, ongoing SEO services, or monthly social media management, Red Dirt Web Solutions is here to be your long-term digital partner. We keep things simple, transparent, and affordable&mdash;because growing your business online should not be complicated.</p>
     </div>
@@ -508,11 +509,11 @@ footer a:hover { color: var(--white); }
         <p>Fill out the form and we will reach out within one business day to schedule your free consultation. No pressure, no jargon&mdash;just a straightforward conversation about how we can help your business grow.</p>
         <div class="contact-detail">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          North Georgia
+          Gainesville, Georgia
         </div>
         <div class="contact-detail">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          hello@reddirtwebsolutions.com
+          <a href="mailto:sales@reddirtwebsites.com">sales@reddirtwebsites.com</a>
         </div>
       </div>
       <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -544,6 +545,7 @@ footer a:hover { color: var(--white); }
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 Red Dirt Web Solutions. All rights reserved.</p>
+  <p style="margin-top: 0.75rem;"><a href="https://support.google.com/business/answer/7690837" target="_blank" rel="noopener">Disclosures: Working with a Third Party</a></p>
 </footer>
 
 <script>
@@ -559,8 +561,13 @@ document.querySelectorAll('nav a').forEach(a => {
 
 // Reveal on scroll
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
